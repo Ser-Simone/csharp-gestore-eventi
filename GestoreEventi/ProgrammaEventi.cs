@@ -31,7 +31,7 @@ namespace GestoreEventi
             foreach (Evento evento in listaEventi)
             {
 
-                evento.ToString();
+                Console.WriteLine(evento.ToString());
             }
         }
         public void rimuoviEvento(List<Evento> listaEventi)
@@ -40,7 +40,7 @@ namespace GestoreEventi
                 listaEventi.Clear();         
         }
 
-        public void StampanEventi(List<Evento> listaEventi)
+        public void StampaNumeroEventi(List<Evento> listaEventi)
         {
             int num = 0;
             for (int i = 0; i < listaEventi.Count; i++)
@@ -49,13 +49,13 @@ namespace GestoreEventi
             }
             Console.WriteLine("i tuoi eventi sono: " +num);
         }
-        public void stampaListTitolo(List<Evento> listaEventi)
+        public void StampaListTitolo(List<Evento> listaEventi)
         {
 
             Console.WriteLine("Ecco la lista dei tuoi eventi");
             foreach(Evento evento in listaEventi)
             {
-                evento.ToString();
+                Console.WriteLine(evento.ToString());
             }
           
         }
@@ -66,30 +66,14 @@ namespace GestoreEventi
 
             for (int i = 0; i < listaEventi.Count; i++)
             {
-                if(listaEventi[i].getDataEvento() == Data)
+                if(this.listaEventi[i].getData() == Data)
                 {
-                    listaEventi.Add(listaEventi[i]);
+                   listaEventi.Add(this.listaEventi[i]);
+                  
                 }
             }
             return listaEventi;
-            Console.WriteLine(listaEventi);
         }
-
-
-        public void stampaListTitolo(List<Evento> eventiData)
-        {
-
-            Console.WriteLine("Ecco la lista dei tuoi eventi");
-            foreach (Evento evento in listaEventi)
-            {
-                evento.ToString();
-            }
-
-        }
-
-
-
-
 
 
 

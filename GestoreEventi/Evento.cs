@@ -22,11 +22,11 @@ namespace GestoreEventi
             this.capienzaMassima = capienzaMassima; 
         }
 
-        public string setTitolo ()
+        public string getTitolo ()
         {
             return titolo;
         }
-        public DateTime setData()
+        public DateTime getData()
         {
             return data;
         }
@@ -54,20 +54,14 @@ namespace GestoreEventi
             Console.WriteLine("hai disdetto" + postiDisdetti);
             return postiDisponibili;
         }
-        public virtual void ToString()
+        public override string ToString()
         {
-            Console.Write( data);
-            Console.WriteLine( " - " +titolo);
-            
+            string stampaEvento = "";
+            stampaEvento += data;
+            stampaEvento += "  -  " +titolo;
+
+            return stampaEvento;
         }
 
-        public DateTime getDataEvento()
-        {
-            Console.WriteLine("Inserisci la data che vuoi verificare:");
-            string Date = Console.ReadLine();
-            DateTime DataInserita = DateTime.Parse(Date);
-
-            return DataInserita;
-        }
     }
 }

@@ -82,8 +82,16 @@ for (int i = 0; i < numEventi; i++)
 
 ProgrammaEventi programmaEventi = new ProgrammaEventi(titolo, listaEventi);
 
-programmaEventi.StampanEventi(listaEventi);
+programmaEventi.StampaNumeroEventi(listaEventi);
 Console.ReadKey();
 Console.Clear();
 
-programmaEventi.stampaListTitolo(listaEventi);
+Console.WriteLine("Inserisci una data gg/mm/aaaa per conoscere gli eventi");
+DateTime dataInseritacerca = DateTime.Parse(Console.ReadLine());
+List<Evento> listadate = programmaEventi.eventiData(dataInseritacerca);
+
+programmaEventi.StampaListTitolo(listadate);
+
+
+
+
