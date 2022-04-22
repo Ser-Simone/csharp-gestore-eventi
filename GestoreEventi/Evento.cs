@@ -35,6 +35,7 @@ namespace GestoreEventi
             return capienzaMassima; 
         }
 
+        // METODO PER PRENOTARE I POSTI
         public int prenotaPosti(int postiRichiesti)
         {
             postiDisponibili = capienzaMassima - postiRichiesti;
@@ -45,9 +46,9 @@ namespace GestoreEventi
        
         }
 
+        // METODO PER DISDIRE I POSTI
         public int disdiciPosti(int postiDisdetti)
         {
-           // int postiDisponibili =  postiPrenotati;
             postiDisponibili =+ postiDisdetti;
             Console.WriteLine("hai a disposizione" +postiDisponibili);
             Console.WriteLine("hai disdetto" + postiDisdetti);
@@ -55,11 +56,18 @@ namespace GestoreEventi
         }
         public virtual void ToString()
         {
-            Console.WriteLine("Il titolo del tuo evento è :" +titolo);
-            Console.WriteLine("il tuo eventi si terrà in data: " +data);
-            Console.WriteLine("Hai ancora a disposizione: " +capienzaMassima +"posti");
+            Console.Write( data);
+            Console.WriteLine( " - " +titolo);
             
+        }
 
+        public DateTime getDataEvento()
+        {
+            Console.WriteLine("Inserisci la data che vuoi verificare:");
+            string Date = Console.ReadLine();
+            DateTime DataInserita = DateTime.Parse(Date);
+
+            return DataInserita;
         }
     }
 }
