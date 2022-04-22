@@ -3,10 +3,12 @@
 Console.WriteLine("--- Benvenuto ----");
 Console.WriteLine("Inserisci il titolo dell'evento");
 string titolo = Console.ReadLine();
+
 Console.WriteLine("\nInserisci la data dell'evento");
 string dataEvento = Console.ReadLine();
+
 DateTime dataInserita = DateTime.Parse(dataEvento);
-Console.WriteLine("\nInserisci la capienza Massiam");
+Console.WriteLine("\nInserisci la capienza Massima");
 int CapienzaMassima = int.Parse(Console.ReadLine());
 
 Evento primoEvento = new Evento(titolo, dataInserita,CapienzaMassima);

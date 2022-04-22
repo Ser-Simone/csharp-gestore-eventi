@@ -18,8 +18,12 @@ namespace GestoreEventi
         public Evento(string titolo, DateTime data, int capienzaMassima)
         {
             this.titolo = titolo;
-            this.data = data;   
+              
             this.capienzaMassima = capienzaMassima; 
+            try { setData(data); }
+            catch (ArgumentOutOfRangeException) { Console.WriteLine("Non puoi inserire una data prima di oggi"); }
+
+            this.data = data;
         }
 
         public string getTitolo ()
@@ -30,6 +34,14 @@ namespace GestoreEventi
         {
             return data;
         }
+        public void setData( DateTime Data)
+        {
+            if (data < DateTime.Now)
+            {
+                throw new ArgumentOutOfRangeException();
+            }    
+        }
+
         public int getCapienzaMax()
         {
             return capienzaMassima; 
