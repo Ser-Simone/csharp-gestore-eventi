@@ -12,6 +12,7 @@ namespace GestoreEventi
         public DateTime data;
         public int capienzaMassima;
         public int postiPrenotati=0;
+        private int postiDisponibili =0;
         
 
         public Evento(string titolo, DateTime data, int capienzaMassima)
@@ -36,21 +37,27 @@ namespace GestoreEventi
 
         public int prenotaPosti(int postiRichiesti)
         {
-            capienzaMassima = capienzaMassima - postiRichiesti;
-            Console.WriteLine("hai a disposizione" +capienzaMassima);
-            return capienzaMassima;
+            postiDisponibili = capienzaMassima - postiRichiesti;
+            Console.WriteLine("hai a disposizione" +postiDisponibili);
+            Console.WriteLine("hai prenotato" + postiRichiesti);
+            
+            return postiDisponibili;
+       
         }
 
         public int disdiciPosti(int postiDisdetti)
         {
-            Console.WriteLine("hai a disposizione" );
-            return capienzaMassima + postiDisdetti;
+           // int postiDisponibili =  postiPrenotati;
+            postiDisponibili =+ postiDisdetti;
+            Console.WriteLine("hai a disposizione" +postiDisponibili);
+            Console.WriteLine("hai disdetto" + postiDisdetti);
+            return postiDisponibili;
         }
         public virtual void ToString()
         {
-            Console.WriteLine(titolo);
-            Console.WriteLine(data);
-            Console.WriteLine(capienzaMassima);
+            Console.WriteLine("Il titolo del tuo evento è :" +titolo);
+            Console.WriteLine("il tuo eventi si terrà in data: " +data);
+            Console.WriteLine("Hai ancora a disposizione: " +capienzaMassima +"posti");
             
 
         }
